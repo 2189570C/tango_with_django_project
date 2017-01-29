@@ -23,7 +23,7 @@ def show_category(request, category_name_slug):
 
         try:
                 # Find the Category with the given slug
-                category = Category.objets.get(slug=category_name_slug)
+                category = Category.objects.get(slug=category_name_slug)
 
                 # Retrieve all associated pages
                 pages = Page.objects.filter(category=category)
