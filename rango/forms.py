@@ -20,7 +20,7 @@ class PageForm(forms.ModelForm):
                             help_text="Please enter the title of the page.")
     url = forms.URLField(max_length=200,
                          help_text="Please enter the URL of the page.")
-    views = forms.IngeterField(widget=forms.HiddenInput(), initial=0)
+    views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
     class Meta:
         # Provide an association between the ModelForm and a model
