@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from rango.models import Category, Page
-from rango.forms import CategoryForm
+from rango.forms import CategoryForm, PageForm
 
 def index(request):
 	# Construct a dictionary to pass to the template engine as its context.
@@ -81,7 +81,7 @@ def add_page(request, category_name_slug):
 				page.save()
 				return show_category(request, category_name_slug)
 		else:
-            print(form.errors)
+                        print(form.errors)
 	
 	context_dict = {'form':form, 'category':category}
 	return render(request, 'rango/add_page.html', context_dict)
